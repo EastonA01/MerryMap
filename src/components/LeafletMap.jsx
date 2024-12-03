@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import Overlay from './Overlay.jsx';
+import MerryMapBanner from "../../MerryMapBanner.png";
 
 export default function LeafletMap() {
     const [markers, setMarkers] = useState([]);
@@ -22,10 +23,11 @@ export default function LeafletMap() {
             <MapContainer
                 center={[34.236698, -77.946198]}
                 zoom={13}
-                scrollWheelZoom={false}
-                style={{ height: '100vh', width: '100vw', overflow: 'auto' }}
+                scrollWheelZoom={true}
+                style={{height: '100vh', width: '100vw', overflow: 'auto'}}
                 id={'map'}
             >
+                <img src={MerryMapBanner} alt="Banner" id={"MerryMapBanner"}/>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -38,14 +40,15 @@ export default function LeafletMap() {
                                 <img
                                     src={marker.image}
                                     alt="Marker visual"
-                                    style={{ maxWidth: '100%', maxHeight: 'auto' }}
+                                    style={{maxWidth: '100%', maxHeight: 'auto'}}
                                 />
                             )}
                         </Popup>
                     </Marker>
                 ))}
+                <Overlay onAddMarker={addMarker}/>
             </MapContainer>
-            <Overlay onAddMarker={addMarker} />
+
         </>
     );
 }

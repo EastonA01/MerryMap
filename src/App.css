@@ -1,10 +1,53 @@
 body{
 }
 
-#overlay{
-  background-color: lightgray;
+/*Styling to Keep Banner Properly Sized*/
+#MerryMapBanner{
+  max-width: 10vw;
+  max-height: 100%;
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  backdrop-filter: blur(1px);
+}
+
+/*Flexbox for map, logo, and buttons*/
+#MerryMapContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+#add_location_overlay{
+  background-color: #00000038;
   position: absolute;
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+#location_overlay{
+  background: rgb(153, 153, 153);
+}
+
+
+#add_location_overlay form{
+  display: flex;
+  flex-direction: column;
+}
+
+#toggle_overlay_button{
+  z-index: 3;
+  position: absolute;
+  bottom: 0;
 }
 
 #map{
