@@ -16,11 +16,13 @@ Overall this project's purpose is to allow users to find Christmas light display
 
 ## Roadmap
 
-- Add markers to map via street address
+- Add markers to map via street address ✅ Achieved 12/03/24
 
-    - Street address autocomplete (Geocoding API)
+    - Street address autocomplete (Geocoding API) ✅ Achieved 12/03/24
 
-- Transition of marker storage from localstorage to DB
+- Transition of marker storage from localstorage to DB ✅ Achieved 12/04/24
+
+- Only enable logged-in users to create points via Google OAuth2
 
 - Ability to add images from camera roll/local folder
 
@@ -54,6 +56,44 @@ Overall this project's purpose is to allow users to find Christmas light display
 ![GitHub contributors](https://img.shields.io/github/contributors/EastonA01/MerryMap)
 
 
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://https://github.com/EastonA01/MerryMap.git
+```
+
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+### Set Up Your .env
+At the moment if you want to contribute you'll need to have your own instance of Supabase set up to have the project work properly. So you will need to follow the steps below:
+
+1. Create a `.env` file
+```bash
+ touch .env
+```
+2. Add your secrets to the vite project .env
+```
+ VITE_SUPABASE_KEY=your_supabase_key
+
+ VITE_SUPABASE_URL=https://your_supabase_url_here.supabase.co
+```
+Start the server
+
+```bash
+  npm run dev
+```
 
 
 ## Contributing
@@ -75,5 +115,5 @@ V0.0.3 | When locations could finally be added with Latitude/Longitude and the a
 
 **Client:** React, Vite, JavaScript
 
-**Server:** TBD
+**Server:** Supabase
 
